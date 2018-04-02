@@ -95,15 +95,14 @@ protocol StarRatingDelegate {
                 num = 1.0
                 self.star1.yellowGrad = num
             }
-            if self.star2.yellowGrad == 1.0 || self.star3.yellowGrad == 1.0 || self.star4.yellowGrad == 1.0 || self.star5.yellowGrad == 1.0{
+            if self.star2.yellowGrad != 0.0 || self.star3.yellowGrad != 0.0 || self.star4.yellowGrad != 0.0 || self.star5.yellowGrad != 0.0{
                 self.star1.yellowGrad = 1.0
                 self.star2.yellowGrad = 0.0
+                self.star3.yellowGrad = 0.0
+                self.star4.yellowGrad = 0.0
+                self.star5.yellowGrad = 0.0
                 num = 1.0
             }
-//            else{
-//                self.star2.yellowGrad = 0.0
-//            }
-            
             self.star3.yellowGrad = 0.0
             self.star4.yellowGrad = 0.0
             self.star5.yellowGrad = 0.0
