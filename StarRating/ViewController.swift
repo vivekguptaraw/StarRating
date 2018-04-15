@@ -19,16 +19,16 @@ class ViewController: UIViewController {
        // star.loadNib()
        
         
-        starMainControl.actionsCreated = {[weak self] in
-            guard let slf = self else {
-                return
-            }
-            let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-            alertWindow.rootViewController = UIViewController()
-            alertWindow.windowLevel = UIWindowLevelAlert + 1;
-            alertWindow.makeKeyAndVisible()
-            alertWindow.rootViewController?.present(slf.starMainControl.alertController, animated: true, completion: nil)
-        }
+//        starMainControl.actionsCreated = {[weak self] in
+//            guard let slf = self else {
+//                return
+//            }
+//            let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+//            alertWindow.rootViewController = UIViewController()
+//            alertWindow.windowLevel = UIWindowLevelAlert + 1;
+//            alertWindow.makeKeyAndVisible()
+//            alertWindow.rootViewController?.present(slf.starMainControl.alertController, animated: true, completion: nil)
+//        }
 //        starMainControl.actions = ["Ok" , "Cancel", "Later","Rate Now"]
 //        starControlHeightConstraint.constant = 520
         starMainControl.backgroundColor = UIColor.yellow

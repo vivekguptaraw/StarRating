@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class StarMainControl: UIView {
 
     /*
@@ -57,7 +58,7 @@ class StarMainControl: UIView {
             }
         }
     }
-    @IBInspectable var totalActions: Int = 2{
+     var totalActions: Int = 2{
         didSet{
             if actions.count > 2{
                 setActions(count: totalActions)
@@ -66,7 +67,7 @@ class StarMainControl: UIView {
         }
     }
     
-    @IBInspectable var actions: [String] = []{
+     var actions: [String] = []{
         didSet{
             if actions.count > 2{
                 totalActions = actions.count
@@ -133,10 +134,35 @@ class StarMainControl: UIView {
     }
     
     func customInit(){
-        Bundle.main.loadNibNamed("StarMainControl", owner: self, options: nil);
-        self.addSubview(contentView)
-        self.contentView.frame = self.bounds;
+//        Bundle.main.loadNibNamed("StarMainControl", owner: self, options: nil);
+//        self.addSubview(contentView)
+//        self.contentView.frame = self.bounds;
+        if self.subviews.count == 0 {
+            print("Loading Nib StarMainControl")
+            //let bundle = Bundle(forClass: self.dynamicType)
+            let bundle = Bundle(for: type(of: self))
+            let nib = UINib(nibName: "StarMainControl", bundle: bundle)
+            contentView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+            contentView.frame = bounds
+            contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            addSubview(contentView)
+        }
         
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        customInit()
+        contentView.prepareForInterfaceBuilder()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        customInit()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
 }

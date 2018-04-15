@@ -125,10 +125,36 @@ import UIKit
     }
     
     func customInitStar(){
-        Bundle.main.loadNibNamed("star", owner: self, options: nil);
-        self.addSubview(contentVw)
-        self.contentVw.frame = self.bounds;
+//        Bundle.main.loadNibNamed("star", owner: self, options: nil);
+//        self.addSubview(contentVw)
+//        self.contentVw.frame = self.bounds;
+        if self.subviews.count == 0 {
+            print("Loading Nib")
+            //let bundle = Bundle(forClass: self.dynamicType)
+            let bundle = Bundle(for: type(of: self))
+            let nib = UINib(nibName: "star", bundle: bundle)
+            contentVw = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+            contentVw.frame = bounds
+            contentVw.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            addSubview(contentVw)
+        }
     }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        customInitStar()
+        contentVw.prepareForInterfaceBuilder()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        //self.selectedColor = UIColor.purple
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
 
 }
 

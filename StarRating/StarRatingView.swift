@@ -34,9 +34,7 @@ protocol StarRatingDelegate {
     var dragDirection: DragDirection = .None
     var starRatingDelegate: StarRatingDelegate?
     @IBInspectable public var selectedColor: UIColor = UIColor.red{
-        willSet{
-            selectedColor = newValue
-        }
+        
         didSet{
             setUptSelectedColor()
         }
@@ -218,15 +216,27 @@ protocol StarRatingDelegate {
     }
     
     func customInit(){
-        Bundle.main.loadNibNamed("StarRatingView", owner: self, options: nil);
-        self.addSubview(contentVw)
-        self.contentVw.frame = self.bounds;
+//        Bundle.main.loadNibNamed("StarRatingView", owner: self, options: nil);
+//        self.addSubview(contentVw)
+//        self.contentVw.frame = self.bounds;
+        if self.subviews.count == 0 {
+            print("Loading Nib StarRatingView")
+            //let bundle = Bundle(forClass: self.dynamicType)
+            let bundle = Bundle(for: type(of: self))
+            let nib = UINib(nibName: "StarRatingView", bundle: bundle)
+            contentVw = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+            contentVw.frame = bounds
+            contentVw.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            addSubview(contentVw)
+        }
     }
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         customInit()
+        setUptSelectedColor()
         contentVw.prepareForInterfaceBuilder()
+        
     }
     
     override func draw(_ rect: CGRect) {
