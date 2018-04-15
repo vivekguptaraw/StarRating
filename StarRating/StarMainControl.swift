@@ -58,6 +58,14 @@ class StarMainControl: UIView {
             }
         }
     }
+    @IBInspectable public var ratingInspectable: Float = 0.0{
+        didSet{
+            if self.ratePoints != nil{
+                self.ratePoints.text = String(ratingInspectable)
+                self.starControl.ratingWillBeSetFromOutSide = ratingInspectable
+            }
+        }
+    }
      var totalActions: Int = 2{
         didSet{
             if actions.count > 2{
@@ -88,7 +96,7 @@ class StarMainControl: UIView {
     }
     
     func setData(){
-        self.starControl.selectedColor = UIColor.red
+        //self.starControl.selectedColor = UIColor.red
         self.starControl.starRatingDelegate = self
         self.checkTitleAndDescription()
     }
@@ -158,7 +166,7 @@ class StarMainControl: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        customInit()
+        //customInit()
     }
     
     override func awakeFromNib() {

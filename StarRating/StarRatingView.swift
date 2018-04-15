@@ -40,6 +40,12 @@ protocol StarRatingDelegate {
         }
     }
     
+    var ratingWillBeSetFromOutSide: Float = 0.0{
+        didSet{
+            self.setStarGradientFromIBInspec(value: ratingWillBeSetFromOutSide)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.customInit()
@@ -154,6 +160,16 @@ protocol StarRatingDelegate {
         }
     }
     
+    func setStarGradientFromIBInspec(value: Float){
+        var pt = value
+        if value > 5.0{
+            pt = 5.0
+        }
+        let starNum = floor(pt) + 1 > 5 ? 5 : floor(pt) + 1
+        self.setStarGradient(starNum: CGFloat(starNum), loc: CGFloat(pt))
+        
+    }
+    
     func setStarGradient(starNum: CGFloat, loc: CGFloat){
         var _loc = Float(loc)
         if starNum == 1{
@@ -186,7 +202,7 @@ protocol StarRatingDelegate {
             self.star2.yellowGrad = Float(1)
             self.star3.yellowGrad = Float(1)
             self.star4.yellowGrad = Float(1)
-            self.star5.yellowGrad = _loc > 5.0 ? 5 : Float(loc - floor(loc))
+            self.star5.yellowGrad = _loc >= 5.0 ? Float(1) : Float(loc - floor(loc))
              print("Star 5 \(_loc)")
         }
         if _loc > 5.0 {

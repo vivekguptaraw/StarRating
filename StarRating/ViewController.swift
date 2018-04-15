@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var starMainControl: StarMainControl!
     @IBOutlet weak var starControlHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var starRating1: StarRatingView!
+    @IBOutlet weak var starRatingView2: StarRatingView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,6 +36,8 @@ class ViewController: UIViewController {
         starMainControl.backgroundColor = UIColor.yellow
         starMainControl.cancelButton.setTitle("Cancel", for: .normal)
         starMainControl.rateNowButton.setTitle("Rate Now", for: .normal)
+        starRatingView2.ratingWillBeSetFromOutSide = 4.3
+        starRating1.ratingWillBeSetFromOutSide = 2.7
     }
     
     

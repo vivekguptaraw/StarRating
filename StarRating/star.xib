@@ -18,6 +18,9 @@
                 <userDefinedRuntimeAttribute type="number" keyPath="whiteGrad">
                     <integer key="value" value="0"/>
                 </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                    <color key="value" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="contentVw" destination="iN0-l3-epB" id="TE7-KI-CcU"/>
