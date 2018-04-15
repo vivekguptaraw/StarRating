@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJb-Dv-KPs" customClass="StarRatingView" customModule="StarRating" customModuleProvider="target">
-                                <rect key="frame" x="67" y="192" width="240" height="42"/>
+                                <rect key="frame" x="67" y="147" width="240" height="42"/>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -41,7 +41,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="rateNowText" value="Rate Now"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Title"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="descriptionText" value="Description"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="descriptionText">
+                                        <string key="value">Multipline Description Description Description Description v v Description Description v Description Description Description Description v v Description Description Description Description Description Description Description Description Description </string>
+                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cancelText" value="Cancel"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="ratingInspectable">
                                         <real key="value" value="2.7000000000000002"/>
@@ -71,7 +73,7 @@
                             <constraint firstItem="Xvh-Bf-38U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="PHm-jQ-dw6"/>
                             <constraint firstItem="Xvh-Bf-38U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cGs-aI-1x0"/>
                             <constraint firstItem="Sws-sw-ysP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cy5-Yo-N1D"/>
-                            <constraint firstItem="wJb-Dv-KPs" firstAttribute="top" secondItem="Xvh-Bf-38U" secondAttribute="bottom" constant="100" id="fdc-Fs-tqv"/>
+                            <constraint firstItem="wJb-Dv-KPs" firstAttribute="top" secondItem="Xvh-Bf-38U" secondAttribute="bottom" constant="55" id="fdc-Fs-tqv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sws-sw-ysP" secondAttribute="bottom" constant="20" id="lfS-BZ-wXy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sws-sw-ysP" secondAttribute="trailing" constant="20" id="rbZ-J6-Krz"/>
                         </constraints>

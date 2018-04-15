@@ -60,7 +60,7 @@
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
-                                    <color key="value" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" red="1" green="0.41338819510199154" blue="0.09925936440612515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="ratingWillBeSetFromOutSide">
                                     <real key="value" value="2.2000000000000002"/>
@@ -84,11 +84,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <state key="normal" title="Rate Now"/>
+                                    <connections>
+                                        <action selector="rateNowClicked:" destination="-1" eventType="touchUpInside" id="enR-Si-Mc5"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oj-8E-VTH">
                                     <rect key="frame" x="320" y="0.0" width="55" height="30"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <state key="normal" title="Cancel"/>
+                                    <connections>
+                                        <action selector="cancelClicked:" destination="-1" eventType="touchUpInside" id="q9W-Ne-pPh"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.35085434430000001" green="0.72336632010000002" blue="0.61363670950000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -97,7 +103,7 @@
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="Bag-7K-d44" firstAttribute="top" secondItem="U8h-lp-Q9h" secondAttribute="bottom" constant="20" id="3kJ-hV-Mq3"/>
                         <constraint firstItem="ZFl-KP-0Uh" firstAttribute="centerX" secondItem="Bag-7K-d44" secondAttribute="centerX" id="4j7-nV-1gh"/>

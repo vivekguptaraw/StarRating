@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol StarMainControlDelegate {
+    func buttonClicked(with tag: Int, buttonText: String?, ratePoints: Float?)
+}
+
+
 @IBDesignable
 class StarMainControl: UIView {
 
@@ -28,6 +33,8 @@ class StarMainControl: UIView {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet var contentView: UIView!
     var actionsCreated: (() -> Void)?
+    var starMainControlDelegate: StarMainControlDelegate?
+    var finaRating: Float = 0.0
     @IBInspectable var titleText: String = ""{
         didSet{
             if self.titleLabel != nil{
@@ -63,6 +70,7 @@ class StarMainControl: UIView {
             if self.ratePoints != nil{
                 self.ratePoints.text = String(ratingInspectable)
                 self.starControl.ratingWillBeSetFromOutSide = ratingInspectable
+                self.finaRating = ratingInspectable
             }
         }
     }
@@ -138,9 +146,15 @@ class StarMainControl: UIView {
     }
     
     @objc func btnTouch(_ sender: UIButton){
-        
+        self.starMainControlDelegate?.buttonClicked(with: sender.tag, buttonText: sender.titleLabel?.text, ratePoints: self.finaRating)
+    }
+    @IBAction func cancelClicked(_ sender: UIButton) {
+        self.starMainControlDelegate?.buttonClicked(with: sender.tag, buttonText: sender.titleLabel?.text, ratePoints: self.finaRating)
     }
     
+    @IBAction func rateNowClicked(_ sender: UIButton) {
+        self.starMainControlDelegate?.buttonClicked(with: sender.tag, buttonText: sender.titleLabel?.text, ratePoints: self.finaRating)
+    }
     func customInit(){
 //        Bundle.main.loadNibNamed("StarMainControl", owner: self, options: nil);
 //        self.addSubview(contentView)
@@ -154,6 +168,8 @@ class StarMainControl: UIView {
             contentView.frame = bounds
             contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             addSubview(contentView)
+            rateNowButton.tag = 0
+            cancelButton.tag = 1
         }
         
     }
@@ -179,6 +195,7 @@ extension StarMainControl: StarRatingDelegate{
     func setRating(with point: Any) {
         if let rate = point as? Float{
             self.ratePoints.text = "\(rate)"
+            self.finaRating = rate
         }else{
             print(point)
         }
