@@ -17,8 +17,11 @@ An easy to use Star Rating control with dynamic features written in swift(iOS).
   - Supports Multiple buttons (requires an array of string to be passed for button names).
   - Easy button click delegates are provided via protocols.
 
+### Quicklook Screenshots on my blog
+https://mobileappengineer.blogspot.in/2018/04/star-rating-swift-ios.html
 
 ### Working Screenshots/Gifs
+[Imgur](https://i.imgur.com/7eFtpom.gifv)
 [Imgur](https://i.imgur.com/YC7OjSm.png)
 [Imgur](https://i.imgur.com/zG541CG.png)
 [Imgur](https://i.imgur.com/gPRfB28.png)
