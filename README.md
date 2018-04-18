@@ -5,7 +5,7 @@ An easy to use Star Rating control with dynamic features written in swift(iOS).
 
 
 # Features
-
+  - Using the control in Storyboard or within XIB is very easy and developer can easily see the changes applied to the control           such as star selected color and Rate points in the Interface builder.
   - Easy to use within any UIViewController or UIView.
   - Developer can change the fill color of Star as per his requirement very easily.
   - Easy and strong support of IBDesignable and IBInspectable (You can see the changes very easily in Interface builder).
