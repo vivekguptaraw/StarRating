@@ -74,6 +74,13 @@ class StarMainControl: UIView {
             }
         }
     }
+    @IBInspectable public var selectedColor: UIColor = UIColor.yellow{
+        didSet{
+            if self.starControl != nil{
+                self.starControl.selectedColor = selectedColor
+            }
+        }
+    }
      var totalActions: Int = 2{
         didSet{
             if actions.count > 2{

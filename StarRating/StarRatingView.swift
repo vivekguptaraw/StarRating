@@ -40,9 +40,13 @@ protocol StarRatingDelegate {
         }
     }
     
-    var ratingWillBeSetFromOutSide: Float = 0.0{
+   @IBInspectable var ratingWillBeSetFromOutSide: Float = 2.0{
+    willSet{
+        ratingWillBeSetFromOutSide = newValue
+    }
         didSet{
-            self.setStarGradientFromIBInspec(value: ratingWillBeSetFromOutSide)
+            self.setUptSelectedColor()
+            //self.setStarGradientFromIBInspec(value: ratingWillBeSetFromOutSide)
         }
     }
     
@@ -268,6 +272,14 @@ protocol StarRatingDelegate {
         
     }
     
+    func setInitialGradient(val: Float){
+        star1.yellowGrad = 0.0
+        star2.yellowGrad = 0.0
+        star3.yellowGrad = 0.0
+        star4.yellowGrad = 0.0
+        star5.yellowGrad = 0.0
+    }
+    
     func setUptSelectedColor(){
         if let s1 = star1{
             star1.selectedColor = selectedColor
@@ -275,11 +287,7 @@ protocol StarRatingDelegate {
             star3.selectedColor = selectedColor
             star4.selectedColor = selectedColor
             star5.selectedColor = selectedColor
-            star1.yellowGrad = 0.0
-            star2.yellowGrad = 0.0
-            star3.yellowGrad = 0.0
-            star4.yellowGrad = 0.0
-            star5.yellowGrad = 0.0
+            self.setStarGradientFromIBInspec(value: self.ratingWillBeSetFromOutSide)
         }
     }
 

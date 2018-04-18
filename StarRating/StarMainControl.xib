@@ -19,6 +19,9 @@
                 <userDefinedRuntimeAttribute type="number" keyPath="ratingInspectable">
                     <real key="value" value="2.2000000000000002"/>
                 </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                    <color key="value" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="cancelButton" destination="0oj-8E-VTH" id="5C5-aW-FKE"/>
@@ -54,16 +57,16 @@
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bag-7K-d44" customClass="StarRatingView" customModule="StarRating" customModuleProvider="target">
                             <rect key="frame" x="-0.5" y="60" width="375" height="50"/>
-                            <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.93939012289047241" green="0.5644763708114624" blue="0.83300846815109253" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="qae-Mh-nX8"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
-                                    <color key="value" red="1" green="0.41338819510199154" blue="0.09925936440612515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="ratingWillBeSetFromOutSide">
                                     <real key="value" value="2.2000000000000002"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                    <color key="value" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
